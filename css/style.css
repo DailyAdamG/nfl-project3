@@ -85,9 +85,9 @@ h2 {
   text-decoration: underline;
 }
 
-/*bangels Styles*/
+/*bengals Styles*/
 
-.bangels_chart::before {
+.bengals_chart::before {
   position: relative;
   top: 100px;
   left: 800px;
@@ -102,7 +102,7 @@ h2 {
   background-size: cover;
   opacity: 0.5
 }
-.bangels_tooltip {
+.bengals_tooltip {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -117,33 +117,33 @@ h2 {
   border-radius: 10px;
 }
 
-.bangels_axis-text {
+.bengals_axis-text {
   font-family: sans-serif;
   font-weight: bold;
   fill: #FB4F14; /*Team primary color*/
   text-anchor: middle;
 }
 
-.bangels_active {
+.bengals_active {
   font-weight: bold;
   fill: #FB4F14; /*Team primary color*/
   transition: fill 0.3s ease-out;
   text-anchor: middle;
 }
 
-.bangels_inactive {
+.bengals_inactive {
   font-weight: lighter;
   fill: #FB4F14; /*Team primary color*/
   transition: fill 0.3s ease-out;
   text-anchor: middle;
 }
 
-.bangels_inactive:hover {
+.bengals_inactive:hover {
   fill: #000000; /*Team secondary color*/
   cursor: pointer;
 }
 
-.bangels_title {
+.bengals_title {
   font-size: 14px;
   font-weight: bold;
   text-align: center;

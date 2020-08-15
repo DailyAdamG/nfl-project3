@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 Year,Rnd,Pick,Player,Team,Pos,Age,AP1,PB,St,College/Univ,RookieAV,CarAV
 2002,1,12,Wendell Bryant,Arizona Cardinals,DT,21,0,0,0,Wisconsin,4,4
 2002,2,49,Levar Fisher,Arizona Cardinals,LB,23,0,0,1,North Carolina St.,6,6
@@ -4850,7 +4849,7 @@ Year,Rnd,Pick,Player,Team,Pos,Age,AP1,PB,St,College/Univ,RookieAV,CarAV
 2020,5,162,Khaleke Hudson,Washington Football Team,LB,,0,0,0,Michigan,0,0
 2020,7,216,Kamren Curl,Washington Football Team,S,,0,0,0,Arkansas,0,0
 2020,7,229,James Smith-Williams,Washington Football Team,DE,,0,0,0,North Carolina St.,0,0
-=======
+=======,,,,,,,,,,,,
 Year,Rnd,Pick,Player,Tm,Pos,Age,AP1,PB,St,College/Univ,RookieAV,CarAV
 2002,1,1,David Carr,HOU,QB,23,0,0,5,Fresno St.,35,48
 2002,1,2,Julius Peppers,CAR,DE,22,3,9,16,North Carolina,43,183
@@ -9702,4 +9701,4 @@ Year,Rnd,Pick,Player,Tm,Pos,Age,AP1,PB,St,College/Univ,RookieAV,CarAV
 2020,7,253,Kyle Hinton,MIN,G,,0,0,0,Washburn,0,0
 2020,7,254,Derrek Tuszka,DEN,LB,,0,0,0,North Dakota St.,0,0
 2020,7,255,Tae Crowder,NYG,LB,,0,0,0,Georgia,0,0
->>>>>>> Stashed changes
+>>>>>>> Stashed changes,,,,,,,,,,,,
