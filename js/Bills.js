@@ -254,7 +254,7 @@ d3.csv("Draft_Data.csv").then(function (teamData, err) {
 d3.csv("Draft_Data.csv").then(function (playerData) {
 
   var FranchisePlayerData = playerData.filter(function (d) {
-    if (d["TM"] == "BUF") {
+    if (d["Tm"] == "BUF") {
       return d;
     }
   })
@@ -264,9 +264,9 @@ d3.csv("Draft_Data.csv").then(function (playerData) {
 
   FranchisePlayerData.forEach(function (data) {
     data.Rnd = +data.Rnd;
-    data.OvPck = +data.OvPck;
-    data.RookieAV = Math.round(+data.RookieAV * 10) / 10;
-    data.CarAV = Math.round(+data.CarAV * 10) / 10;
+    data.Pick = +data.Pick;
+    data.RookieAV = +data.RookieAV;
+    data.CarAV = +data.CarAV;
   });
 
   var button = d3.select("#filter-btn");
