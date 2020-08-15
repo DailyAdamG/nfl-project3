@@ -14,7 +14,7 @@ var height = svgHeight - margin.top - margin.bottom;
 // Create an SVG wrapper, append an SVG group that will hold our chart,
 // and shift the latter by left and top margins.
 var svg = d3
-  .select(".cubs_chart")
+  .select(".bills_chart")
   .append("svg")
   .attr("width", svgWidth)
   .attr("height", svgHeight);
@@ -24,7 +24,7 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Initial Params
-var chosenYAxis = "TC_Total_WAR";
+var chosenYAxis = "RookieAV";
 
 // function used for updating x-scale var upon click on axis label
 function yScale(teamData, chosenYAxis) {
@@ -67,18 +67,18 @@ function updateToolTip(chosenYAxis, barGroup) {
 
   var label;
 
-  if (chosenYAxis === "TC_Total_WAR") {
-    label = "Team Controlled WAR:";
+  if (chosenYAxis === "RookieAV") {
+    label = "Rookie Approximate Value:";
   }
   else {
-    label = "Career WAR:";
+    label = "Career Approximate Value:";
   }
 
   var toolTip = d3.tip()
-    .attr("class", "cubs_tooltip")
+    .attr("class", "bills_tooltip")
     .offset([80, -60])
     .html(function (d) {
-      return (`${d.Year + " " + d.Current_Franchise}<br>${label} ${d[chosenYAxis]}`);
+      return (`${d.Year + " " + d.TM}<br>${label} ${d[chosenYAxis]}`);
     });
 
   barGroup.call(toolTip);
@@ -95,19 +95,19 @@ function updateToolTip(chosenYAxis, barGroup) {
 }
 
 // Retrieve data from the CSV file and execute everything below
-d3.csv("data/Data_Grouped_by_Year_and_Franchise.csv").then(function (teamData, err) {
+d3.csv("Draft_Data.csv").then(function (teamData, err) {
   if (err) throw err;
 
   var FranchiseTeamData = teamData.filter(function (d) {
-    if (d["Current_Franchise"] == "Chicago Cubs") {
+    if (d["TM"] == "BUF") {
       return d;
     }
   })
 
   // parse data
   FranchiseTeamData.forEach(function (data) {
-    data.TC_Total_WAR = Math.round(+data.TC_Total_WAR * 10) / 10;
-    data.Career_Total_WAR = Math.round(+data.Career_Total_WAR * 10) / 10;
+    data.RookieAV = Math.round(+data.RookieAV * 10) / 10;
+    data.CarAV = Math.round(+data.CarAV * 10) / 10;
     data.Year = +data.Year;
   });
 
@@ -151,7 +151,7 @@ d3.csv("data/Data_Grouped_by_Year_and_Franchise.csv").then(function (teamData, e
     .attr("y", d => yLinearScale(d[chosenYAxis]))
     .attr("height", d => height - yLinearScale(d[chosenYAxis]))
     .attr("width", xLinearScale.bandwidth())
-    .classed("cubs_inactive", true)
+    .classed("bills_inactive", true)
 
   // Create group for two x-axis labels
   var labelsGroup = chartGroup.append("g")
@@ -161,38 +161,38 @@ d3.csv("data/Data_Grouped_by_Year_and_Franchise.csv").then(function (teamData, e
     .attr("x", width / 2 )
     .attr("y", 20)
     .style("text-anchor", "center")
-    .text("Chicago Cubs Draft History by WAR")
-    .classed("cubs_title", true)
+    .text("BUF Draft History by AV")
+    .classed("bills_title", true)
   ;
 
 
-  var TC_WAR = labelsGroup.append("text")
+  var Rookie_AV = labelsGroup.append("text")
     .attr("y", -480)
     .attr("x", (height / 2))
     .attr("dy", "1em")
     .attr("transform", "rotate(-90)")
-    .attr("value", "TC_Total_WAR") // value to grab for event listener
+    .attr("value", "RookieAV") // value to grab for event listener
     .classed("active", true)
-    .classed("cubs_axis-text", true)
-    .text("Team Controlled WAR");
+    .classed("bills_axis-text", true)
+    .text("Rookie Approximate Value");
 
 
-  var Career_WAR = labelsGroup.append("text")
+  var Career_AV = labelsGroup.append("text")
     .attr("y", -460)
     .attr("x", (height / 2))
     .attr("dy", "1em")
     .attr("transform", "rotate(-90)")
-    .attr("value", "Career_Total_WAR") // value to grab for event listener
-    .classed("cubs_inactive", true)
-    .classed("cubs_axis-text", true)
-    .text("Career WAR");
+    .attr("value", "CarAV") // value to grab for event listener
+    .classed("bills_inactive", true)
+    .classed("bills_axis-text", true)
+    .text("Career Approximate Value");
 
   //append x axis
   chartGroup.append("text")
     .attr("x", (width / 2))
     .attr("y", 460)
     .attr("value", "Year")
-    .classed("cubs_axis-text", true)
+    .classed("bills_axis-text", true)
     .text("Year");
 
   // updateToolTip function above csv import
@@ -225,21 +225,21 @@ d3.csv("data/Data_Grouped_by_Year_and_Franchise.csv").then(function (teamData, e
         barGroup = updateToolTip(chosenYAxis, barGroup);
 
         // changes classes to change bold text
-        if (chosenYAxis === "Career_Total_WAR") {
-          Career_WAR
-            .classed("cubs_active", true)
-            .classed("cubs_inactive", false);
-          TC_WAR
-            .classed("cubs_active", false)
-            .classed("cubs_inactive", true);
+        if (chosenYAxis === "CarAV") {
+          Career_AV
+            .classed("bills_active", true)
+            .classed("bills_inactive", false);
+          Rookie_AV
+            .classed("bills_active", false)
+            .classed("bills_inactive", true);
         }
         else {
-          Career_WAR
-            .classed("cubs_active", false)
-            .classed("cubs_inactive", true);
-          TC_WAR
-            .classed("cubs_active", true)
-            .classed("cubs_inactive", false);
+          Career_AV
+            .classed("bills_active", false)
+            .classed("bills_inactive", true);
+          Rookie_AV
+            .classed("bills_active", true)
+            .classed("bills_inactive", false);
         }
       }
     });
@@ -251,10 +251,10 @@ d3.csv("data/Data_Grouped_by_Year_and_Franchise.csv").then(function (teamData, e
 
 //Creating a Table
 
-d3.csv("data/Draft_SD_CSV.csv").then(function (playerData) {
+d3.csv("Draft_Data.csv").then(function (playerData) {
 
   var FranchisePlayerData = playerData.filter(function (d) {
-    if (d["Current_Franchise"] == "Chicago Cubs") {
+    if (d["TM"] == "BUF") {
       return d;
     }
   })
@@ -265,8 +265,8 @@ d3.csv("data/Draft_SD_CSV.csv").then(function (playerData) {
   FranchisePlayerData.forEach(function (data) {
     data.Rnd = +data.Rnd;
     data.OvPck = +data.OvPck;
-    data.TC_Total_WAR = Math.round(+data.TC_Total_WAR * 10) / 10;
-    data.Career_Total_WAR = Math.round(+data.Career_Total_WAR * 10) / 10;
+    data.RookieAV = Math.round(+data.RookieAV * 10) / 10;
+    data.CarAV = Math.round(+data.CarAV * 10) / 10;
   });
 
   var button = d3.select("#filter-btn");
