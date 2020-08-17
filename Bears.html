@@ -9,7 +9,8 @@
         <meta name="generator" content="Jekyll v4.0.1">
         <title>Landing Page</title>
         <link href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="./css/style.css">
         <!-- <Bootstrap core CSS> -->
         <link href="../css/bootstrap.css" rel="stylesheet">
@@ -135,7 +136,9 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="display-3"><Strong><center>Chicago Bears<br>NFL Draft Analysis</center></Strong></h1>
+                    <h1 class="display-3"><Strong>
+                            <center>Chicago Bears<br>NFL Draft Analysis</center>
+                        </Strong></h1>
                     <p></p>
                 </div>
             </div>
@@ -170,8 +173,10 @@
                                         </div>
                                         <button id="filter-btn" type="button" class="btn btn-default">Filter
                                             Table</button>
-                                        <button id="filter-btn" type="button" class="btn btn1 btn-default">Hide Graph</button>
-                                        <button id="filter-btn" type="button" class="btn btn2 btn-default" >Show Graph</button>
+                                        <button id="filter-btn" type="button" class="btn btn1 btn-default">Hide
+                                            Graph</button>
+                                        <button id="filter-btn" type="button" class="btn btn2 btn-default">Show
+                                            Graph</button>
                                     </form>
                                 </div>
                             </div>
@@ -217,18 +222,18 @@
                 crossorigin="anonymous"></script>
             <script type="text/javascript" src="js/bears.js"></script>
             <script>
-                $(document).ready(function() {
-                $('.btn1').hide();
-                $('.btn2').hide();
-                    $('.btn').click(function() {
+                $(document).ready(function () {
+                    $('.btn1').hide();
+                    $('.btn2').hide();
+                    $('.btn').click(function () {
                         $('.btn1').show();
                     });
-                    $('.btn1').click(function(){
+                    $('.btn1').click(function () {
                         $('.btn1').hide();
                         $('.btn2').show();
                         $('.bears_chart').hide();
                     });
-                    $('.btn2').click(function(){
+                    $('.btn2').click(function () {
                         $('.btn1').show();
                         $('.btn2').hide();
                         $('.bears_chart').show();
