@@ -99,7 +99,7 @@ d3.csv("Bar_Chart_Data.csv").then(function (teamData, err) {
   if (err) throw err;
 
   var FranchiseTeamData = teamData.filter(function (d) {
-    if (d["Team"] == "San Francisco") {
+    if (d["Team"] == "San Francisco 49ers") {
       return d;
     }
   })
@@ -161,7 +161,7 @@ d3.csv("Bar_Chart_Data.csv").then(function (teamData, err) {
     .attr("x", width / 2)
     .attr("y", 20)
     .style("text-anchor", "center")
-    .text("San Francisco Draft History by AV")
+    .text("San Francisco 49ers Draft History by AV")
     .classed("niners_title", true)
     ;
 
@@ -254,7 +254,7 @@ d3.csv("Bar_Chart_Data.csv").then(function (teamData, err) {
 d3.csv("Draft_Data.csv").then(function (playerData) {
 
   var FranchisePlayerData = playerData.filter(function (d) {
-    if (d["Team"] == "San Francisco") {
+    if (d["Team"] == "San Francisco 49ers") {
       return d;
     }
   })
