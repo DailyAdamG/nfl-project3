@@ -99,7 +99,7 @@ d3.csv("Bar_Chart_Data.csv").then(function (teamData, err) {
   if (err) throw err;
 
   var FranchiseTeamData = teamData.filter(function (d) {
-    if (d["Team"] == "Houstan Texans") {
+    if (d["Team"] == "Houston Texans") {
       return d;
     }
   })
@@ -161,7 +161,7 @@ d3.csv("Bar_Chart_Data.csv").then(function (teamData, err) {
     .attr("x", width / 2 )
     .attr("y", 20)
     .style("text-anchor", "center")
-    .text("Houstan Texans Draft History by AV")
+    .text("Houston Texans Draft History by AV")
     .classed("texans_title", true)
   ;
 
@@ -254,7 +254,7 @@ d3.csv("Bar_Chart_Data.csv").then(function (teamData, err) {
 d3.csv("Draft_Data.csv").then(function (playerData) {
 
   var FranchisePlayerData = playerData.filter(function (d) {
-    if (d["Team"] == "Houstan Texans") {
+    if (d["Team"] == "Houston Texans") {
       return d;
     }
   })
