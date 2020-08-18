@@ -308,7 +308,7 @@ d3.csv("data/Draft_SD_CSV.csv").then(function (playerData) {
   };
 
   // var input = document.getElementById("my-input");
-  d3.csv("data/quotes.csv").then(function (quotes, err) {
+  d3.csv("quote.csv").then(function (quotes, err) {
     if (err) throw err;
     var quote = quotes[Math.floor(Math.random() * quotes.length)].quote;
     document.getElementById("my-input").innerText = quote;
