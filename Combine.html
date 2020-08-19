@@ -140,7 +140,7 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="display-3"><Strong><center>New York Jets<br>NFL Draft Analysis</center></Strong></h1>
+                    <h1 class="display-3"><Strong><center>Combine Database<br>2002 - 2016</center></Strong></h1>
                     <p></p>
                 </div>
             </div>
@@ -149,9 +149,21 @@
                 <div class="row">
                     <div class="col-md-12">
                     </div>
-                    <div class="jets_chart">
-                        <!-- <img src="images/thumbs_houston-yankees-logo-present.gif" alt="yankees"> -->
-                    </div>
+                    <h1>About the Tests</h1>
+                </div>
+                <div class="row">  
+                    <button type="button" class="btn btn-default" 
+                    href="https://en.wikipedia.org/wiki/NFL_Scouting_Combine#20-yard_shuttle">Shuttle</button>
+                    <button type="button" class="btn btn-default" 
+                    href="https://en.wikipedia.org/wiki/NFL_Scouting_Combine#Bench_press">Bench Press</button>
+                    <button type="button" class="btn btn-default" 
+                    href="https://en.wikipedia.org/wiki/40-yard_dash">40 Yard Dash</button>
+                    <button type="button" class="btn btn-default" 
+                    href="https://en.wikipedia.org/wiki/Vertical_jump">Vertical Leap</button>
+                    <button type="button" class="btn btn-default" 
+                    href="https://en.wikipedia.org/wiki/Standing_long_jump">Broad Jump</button>
+                    <button type="button" class="btn btn-default" 
+                    href="https://en.wikipedia.org/wiki/Three-cone_drill">Three-cone Drill</button>
                 </div>
                 <hr>
             </div> <!-- /container -->
@@ -167,16 +179,14 @@
                                         <div class="form-group">
                                             <ul class="list-group" id="filters">
                                                 <li class="filter list-group-item">
-                                                    <label for="date">Enter a Date</label>
-                                                    <input class="form-control" id="Year-Input" type="text"
-                                                        placeholder="YYYY" maxlength="4">
+                                                    <label for="date">Enter a Position</label>
+                                                    <input class="form-control" id="POS-Input" type="text"
+                                                        placeholder="WR" maxlength="3">
                                                 </li>
                                             </ul>
                                         </div>
                                         <button id="filter-btn" type="button" class="btn btn-default">Filter
                                             Table</button>
-                                        <button id="filter-btn" type="button" class="btn btn1 btn-default">Hide Graph</button>
-                                        <button id="filter-btn" type="button" class="btn btn2 btn-default" >Show Graph</button>
                                     </form>
                                 </div>
                             </div>
@@ -184,22 +194,24 @@
                     </div>
                     <div class="col-md-10">
                         <div id="table-area" class="">
-                            <table id="jets-table" class="table table-striped">
+                            <table id="combine-table" class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th class="table-head">Year</th>
-                                        <th class="table-head">Round</th>
-                                        <th class="table-head">Overall Pick</th>
-                                        <th class="table-head">Player</th>
-                                        <th class="table-head">Drafting Team</th>
-                                        <th class="table-head">Draft Position</th>
-                                        <th class="table-head">Age</th>
-                                        <th class="table-head">All-Pro</th>
-                                        <th class="table-head">Pro Bowl</th>
-                                        <th class="table-head">Years as a Starter</th>
+                                        <th class="table-head">Name</th>
                                         <th class="table-head">College</th>
-                                        <th class="table-head">Rookie AV</th>
-                                        <th class="table-head">Career AV</th>
+                                        <th class="table-head">POS</th>
+                                        <th class="table-head">Height (in)</th>
+                                        <th class="table-head">Weight (in)</th>
+                                        <th class="table-head">Hand Size (in)</th>
+                                        <th class="table-head">Arm Length (in)</th>
+                                        <th class="table-head">40 Yard Dash</th>
+                                        <th class="table-head">Bench Press</th>
+                                        <th class="table-head">Vertical Leap</th>
+                                        <th class="table-head">Broad Jump (in)</th>
+                                        <th class="table-head">Shuttle</th>
+                                        <th class="table-head">3 Cone</th>
+                                        <th class="table-head">60 Yard Shuttle</th>
                                     </tr>
                                 </thead>
                                 <tbody></tbody>
@@ -220,26 +232,7 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
                 integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
                 crossorigin="anonymous"></script>
-            <script type="text/javascript" src="js/jets.js"></script>
-            <script>
-                $(document).ready(function() {
-                $('.btn1').hide();
-                $('.btn2').hide();
-                    $('.btn').click(function() {
-                        $('.btn1').show();
-                    });
-                    $('.btn1').click(function(){
-                        $('.btn1').hide();
-                        $('.btn2').show();
-                        $('.jets_chart').hide();
-                    });
-                    $('.btn2').click(function(){
-                        $('.btn1').show();
-                        $('.btn2').hide();
-                        $('.jets_chart').show();
-                    });
-                });
-            </script>
+            <script type="text/javascript" src="js/combine.js"></script>
             <!-- <script type = "text/javascript" src= "index.js"></script> -->
 
     </body>

@@ -6,6 +6,84 @@ h2 {
   text-align: right;
 }
 
+.combine_chart::before {
+  position: relative;
+  top: 100px;
+  left: 800px;
+  z-index: -1;
+  display: block;
+  width: 120px;
+  height: 80px;
+  content: " ";
+  background-image: "image/scouting combine.jpg";
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover;
+  opacity: 0.5
+}
+
+
+/*49ers Styles*/
+
+.combine_tooltip {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 60px;
+  font: 12px sans-serif;
+  color: #AAAAAA; /*Team secondary color*/
+  text-align: center;
+  background: #000000; /*Team primary color*/
+  border: 0;
+  border-radius: 10px;
+  }
+
+.combine_img {
+  display: block;
+  margin-left:auto;
+  margin-right: auto;
+  padding: 5px;
+  width: 600px;
+  height:500px;
+  opacity: 0.5
+
+}  
+
+.combine_axis-text {
+  font-family: sans-serif;
+  font-weight: bold;
+  fill: #000000; /*Team primary color*/
+  text-anchor: middle;
+}
+
+.combine_active {
+  font-weight: bold;
+  fill: #000000; /*Team primary color*/
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.combine_inactive {
+  font-weight: lighter;
+  fill: #000000; /*Team primary color*/
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.combine_inactive:hover {
+  fill: #AAAAAA; /*Team secondary color*/
+  cursor: pointer;
+}
+
+.combine_title {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+}
+
 
 .niners_chart::before {
   position: relative;
@@ -36,7 +114,7 @@ h2 {
   font: 12px sans-serif;
   color: #B3995D; /*Team secondary color*/
   text-align: center;
-  background: ##AA0000; /*Team primary color*/
+  background: #AA0000; /*Team primary color*/
   border: 0;
   border-radius: 10px;
   }
@@ -55,7 +133,7 @@ h2 {
 .niners_axis-text {
   font-family: sans-serif;
   font-weight: bold;
-  fill: ##AA0000; /*Team primary color*/
+  fill: #AA0000; /*Team primary color*/
   text-anchor: middle;
 }
 
@@ -110,7 +188,7 @@ h2 {
   width: 180px;
   height: 60px;
   font: 12px sans-serif;
-  color: ##000000; /*Team secondary color*/
+  color: #000000; /*Team secondary color*/
   text-align: center;
   background: #FB4F14; /*Team primary color*/
   border: 0;
