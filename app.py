@@ -9,7 +9,7 @@ def home():
 
 
 @app.route("/bears")
-def home():
+def bears():
     return render_template("bears.html")
 
 
