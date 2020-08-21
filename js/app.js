@@ -308,14 +308,14 @@ d3.csv("data/Draft_SD_CSV.csv").then(function (playerData) {
   };
 
   // var input = document.getElementById("my-input");
-  d3.csv("quote.csv").then(function (quotes, err) {
+  d3.csv("quotes.csv").then(function (quotes, err) {
     if (err) throw err;
     var quote = quotes[Math.floor(Math.random() * quotes.length)].quote;
-    document.getElementById("my-input").innerText = quote;
+    document.getElementById("myInput").innerText = quote;
     // input.value = quotes[Math.floor(Math.random() * quotes.length)].quote;
 
   })
 
 }).catch(function (error) {
-  console.log(error);
+  // console.log(error);
 });
